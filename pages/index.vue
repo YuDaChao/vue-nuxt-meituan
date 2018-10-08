@@ -5,6 +5,7 @@
       <h1 class="title">
         vue-nuxt-meituan
       </h1>
+      <el-button type="primary">主要按钮</el-button>
       <h2 class="subtitle">
         My tiptop Nuxt.js project
       </h2>
