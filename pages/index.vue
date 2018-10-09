@@ -2,22 +2,22 @@
   <section class="container">
     <div>
       <logo/>
-      <h1 class="title">
-        vue-nuxt-meituan
-      </h1>
       <el-button type="primary">主要按钮</el-button>
-      <h2 class="subtitle">
-        My tiptop Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
+      <div class="block">
+        <span class="demonstration">默认</span>
+        <el-date-picker
+          v-model="value1"
+          type="date"
+          placeholder="选择日期"/>
+      </div>
+      <div class="block">
+        <span class="demonstration">带快捷选项</span>
+        <el-date-picker
+          :picker-options="pickerOptions1"
+          v-model="value2"
+          align="right"
+          type="date"
+          placeholder="选择日期"/>
       </div>
     </div>
   </section>
@@ -29,6 +29,41 @@ import Logo from '~/components/Logo.vue'
 export default {
   components: {
     Logo
+  },
+  data() {
+    return {
+      pickerOptions1: {
+        disabledDate(time) {
+          return time.getTime() > Date.now()
+        },
+        shortcuts: [
+          {
+            text: '今天',
+            onClick(picker) {
+              picker.$emit('pick', new Date())
+            }
+          },
+          {
+            text: '昨天',
+            onClick(picker) {
+              const date = new Date()
+              date.setTime(date.getTime() - 3600 * 1000 * 24)
+              picker.$emit('pick', date)
+            }
+          },
+          {
+            text: '一周前',
+            onClick(picker) {
+              const date = new Date()
+              date.setTime(date.getTime() - 3600 * 1000 * 24 * 7)
+              picker.$emit('pick', date)
+            }
+          }
+        ]
+      },
+      value1: '',
+      value2: ''
+    }
   }
 }
 </script>
