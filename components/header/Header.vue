@@ -131,7 +131,7 @@ export default {
     margin: 0 auto
     display: flex
     .header-logo
-      padding: 28px 100px 40px 0
+      padding: 28px 160px 40px 0
       img
         width: 126px
         height: 46px
@@ -158,7 +158,7 @@ export default {
       display: flex
       align-items: center
       height: 32px
-      margin-left: 206px
+      margin-left: 266px
       .category-nav-item
         color: #222
         font-weight: 700

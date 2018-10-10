@@ -27,6 +27,7 @@ module.exports = {
   css: [
     '@/assets/reset.css',
     'element-ui/lib/theme-chalk/display.css',
+    'swiper/dist/css/swiper.css',
     '@/assets/iconfont/iconfont.css',
     '@/assets/base.scss'
   ],
@@ -34,7 +35,10 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['@/plugins/element-ui'],
+  plugins: [
+    { src: '@/plugins/element-ui' },
+    { src: '@/plugins/swiper.js', ssr: false }
+  ],
 
   /*
   ** Nuxt.js modules
