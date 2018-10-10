@@ -1,0 +1,16 @@
+// 主要字体颜色
+$primary-color: #13D1BE;
+// a 标签的颜色
+$a-color: #999;
+
+
+@mixin flex-sb {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+@mixin flex-cen {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}

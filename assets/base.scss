@@ -1,0 +1,8 @@
+@import "./sass/variables";
+a {
+  color: $a-color;
+}
+a:hover {
+  text-decoration: none;
+  color: $primary-color;
+}
