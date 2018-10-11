@@ -37,7 +37,8 @@ module.exports = {
   */
   plugins: [
     { src: '@/plugins/element-ui' },
-    { src: '@/plugins/swiper.js', ssr: false }
+    { src: '@/plugins/swiper.js', ssr: false },
+    { src: '@/plugins/axios' }
   ],
 
   /*
@@ -52,6 +53,23 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    prefix: '/api',
+    proxy: true,
+    credentials: true
+  },
+  /**
+   ** proxy
+   */
+  proxy: {
+    '/api': {
+      target: 'http://localhost:8100',
+      pathRewrite: {
+        '^/api/': ''
+      }
+    }
+  },
+  env: {
+    // baseUrl: process.env.BASE_URL || 'http://localhost:8100'
   },
 
   /*
