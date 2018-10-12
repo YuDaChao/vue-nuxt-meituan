@@ -22,9 +22,9 @@
             ]
           </div>
           <div class="user-entry">
-            <a
-              href="#"
-              class="user-login">立即登录</a>
+            <nuxt-link
+              to="/login"
+              class="user-login">立即登录</nuxt-link>
             <a
               href="#"
               class="user-register">注册</a>
