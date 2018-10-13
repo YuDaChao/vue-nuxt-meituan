@@ -39,7 +39,8 @@
               class="user-login">{{ userInfo.username }}</nuxt-link>
             <a
               href="#"
-              class="user-register">退出</a>
+              class="user-register"
+              @click.stop.prevent="handleLogout">退出</a>
           </div>
         </div>
         <div class="header-bar-nav">
@@ -92,6 +93,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: 'Header',
   props: {
@@ -100,6 +102,14 @@ export default {
       default() {
         return null
       }
+    }
+  },
+  methods: {
+    ...mapActions({
+      logout: 'user/logout'
+    }),
+    handleLogout() {
+      this.logout()
     }
   }
 }
