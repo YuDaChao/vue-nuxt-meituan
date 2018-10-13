@@ -10,10 +10,14 @@
       </div>
       <div class="user-name">Hi！你好</div>
       <div class="register-btn user-btn">
-        <el-button round>注册</el-button>
+        <el-button
+          round
+          @click="handleRegister">注册</el-button>
       </div>
       <div class="login-btn user-btn">
-        <el-button round>立即登录</el-button>
+        <el-button
+          round
+          @click="handleLogin">立即登录</el-button>
       </div>
     </div>
     <div
@@ -75,6 +79,14 @@ export default {
       default() {
         return null
       }
+    }
+  },
+  methods: {
+    handleRegister() {
+      this.$router.push('/register')
+    },
+    handleLogin() {
+      this.$router.push('/login')
     }
   }
 }
