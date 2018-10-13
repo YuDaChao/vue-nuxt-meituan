@@ -21,13 +21,25 @@
               class="city-guess">廊坊</a>
             ]
           </div>
-          <div class="user-entry">
+          <div
+            v-if="!userInfo"
+            class="user-entry">
             <nuxt-link
               to="/login"
               class="user-login">立即登录</nuxt-link>
             <a
               href="#"
               class="user-register">注册</a>
+          </div>
+          <div
+            v-else
+            class="user-entry">
+            <nuxt-link
+              to="/"
+              class="user-login">{{ userInfo.username }}</nuxt-link>
+            <a
+              href="#"
+              class="user-register">退出</a>
           </div>
         </div>
         <div class="header-bar-nav">
@@ -81,7 +93,15 @@
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  props: {
+    userInfo: {
+      type: Object,
+      default() {
+        return null
+      }
+    }
+  }
 }
 </script>
 

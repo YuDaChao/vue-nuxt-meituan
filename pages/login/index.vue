@@ -11,14 +11,19 @@
           <div slot="header">
             <span>账号登录</span>
           </div>
-          <el-form ref="form">
-            <el-form-item>
+          <el-form
+            ref="loginForm"
+            :model="loginForm"
+            :rules="loginRules">
+            <el-form-item prop="email">
               <el-input
+                v-model="loginForm.email"
                 placeholder="邮箱"
                 prefix-icon="el-icon-message"/>
             </el-form-item>
-            <el-form-item>
+            <el-form-item prop="password">
               <el-input
+                v-model="loginForm.password"
                 placeholder="密码"
                 prefix-icon="el-icon-view"/>
             </el-form-item>
@@ -30,7 +35,8 @@
             <el-form-item style="margin-bottom: 0">
               <el-button
                 type="primary"
-                style="width: 100%">登录</el-button>
+                style="width: 100%"
+                @click="submitLoginForm('loginForm')">登录</el-button>
             </el-form-item>
             <el-form-item style="margin-bottom: 0">
               <span>还有没账号?</span>
@@ -71,7 +77,48 @@
 </template>
 
 <script>
-export default {}
+import { mapMutations } from 'vuex'
+
+export default {
+  data() {
+    return {
+      loginRules: {
+        email: [{ required: true, message: '请输入邮箱', trigger: 'blur' }],
+        password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+      },
+      loginForm: {
+        email: '',
+        password: ''
+      }
+    }
+  },
+  methods: {
+    ...mapMutations({
+      setUserInfo: 'user/setUserInfo'
+    }),
+    submitLoginForm(formName) {
+      const _this = this
+      this.$refs[formName].validate(async valid => {
+        if (valid) {
+          const result = await _this.$axios.post('/users/login', {
+            ...this.loginForm
+          })
+          if (result.status === 1) {
+            _this.$notify.error({
+              title: '登录失败',
+              message: result.message
+            })
+          } else {
+            _this.setUserInfo(result.data)
+            this.$router.push('/')
+          }
+        } else {
+          return false
+        }
+      })
+    }
+  }
+}
 </script>
 
 <style scoped lang="sass">

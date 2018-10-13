@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <mt-header/>
+    <mt-header :user-info="userInfo"/>
     <div class="banner-wrap">
       <div class="banner-content">
         <div class="left-banner">
@@ -61,20 +61,7 @@
               </div>
             </div>
             <div class="banner-login-card">
-              <div class="banner-login-content">
-                <div class="header-img">
-                  <img
-                    src="~static/images/banner/avatar.jpg"
-                    class="avatar-img">
-                </div>
-                <div class="user-name">Hi！你好</div>
-                <div class="register-btn user-btn">
-                  <el-button round>注册</el-button>
-                </div>
-                <div class="login-btn user-btn">
-                  <el-button round>立即登录</el-button>
-                </div>
-              </div>
+              <user-card :user-info="userInfo"/>
             </div>
           </div>
           <div class="banner-row">
@@ -270,11 +257,14 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import MtHeader from '../components/header/Header'
+import UserCard from '../components/user-card/UserCard'
 
 export default {
   components: {
-    MtHeader
+    MtHeader,
+    UserCard
   },
   data() {
     return {
@@ -322,6 +312,11 @@ export default {
     if (result.status === 0) {
       return { categoryList: result.data }
     }
+  },
+  computed: {
+    ...mapState({
+      userInfo: state => state.user.userInfo
+    })
   },
   async mounted() {
     this.getSecondCategoryList()
@@ -462,28 +457,6 @@ export default {
           background-color: #fff
           border: 1px solid #e5e5e5
           text-align: center
-          .banner-login-content
-            padding-top: 30px
-            .header-img
-              margin: 0 auto 4px
-              .avatar-img
-                width: 55px
-                height: 55px
-                border-radius: 55px
-                border: 4px solid #E5E5E5
-            .user-name
-              width: 6em
-              overflow: hidden
-              text-overflow: ellipsis
-              white-space: nowrap
-              font-weight: 500
-              font-size: 16px
-              color: #222
-              margin: 0 auto
-            .user-btn
-              margin: 10px 0
-              .el-button.is-round
-                width: 120px
         .item
           width: 238px
           height: 165px
