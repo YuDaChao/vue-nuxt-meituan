@@ -5,9 +5,9 @@
         <div class="header-bar-position">
           <i class="iconfont icon-address"/>
           <span class="current-city">固安县</span>
-          <a
-            href="#"
-            class="change-city">切换城市</a>
+          <nuxt-link
+            to="/changecity"
+            class="change-city">切换城市</nuxt-link>
           <div class="near-citys">
             [
             <a
