@@ -4,23 +4,10 @@
       <div class="header-content">
         <div class="header-bar-position">
           <i class="iconfont icon-address"/>
-          <span class="current-city">固安县</span>
+          <span class="current-city">{{ localCity }}</span>
           <nuxt-link
             to="/changecity"
             class="change-city">切换城市</nuxt-link>
-          <div class="near-citys">
-            [
-            <a
-              href="#"
-              class="city-guess">涿州</a>
-            <a
-              href="#"
-              class="city-guess">霸州</a>
-            <a
-              href="#"
-              class="city-guess">廊坊</a>
-            ]
-          </div>
           <div
             v-if="!userInfo"
             class="user-entry">
@@ -102,6 +89,10 @@ export default {
       default() {
         return null
       }
+    },
+    localCity: {
+      type: String,
+      default: ''
     }
   },
   methods: {

@@ -1,6 +1,12 @@
-export const state = () => ({})
+export const state = () => ({
+  localCity: ''
+})
 
-export const mutations = {}
+export const mutations = {
+  setLocalCity(state, city) {
+    state.localCity = city
+  }
+}
 
 export const actions = {
   async nuxtServerInit({ commit }) {

@@ -13,7 +13,14 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        type: 'text/javascript',
+        src:
+          'http://api.map.baidu.com/api?v=2.0&ak=j9vfBXWz0KGxGtdp4s348UsLjgshMFGE'
+      }
+    ]
   },
 
   /*
