@@ -5,13 +5,10 @@
         <el-form-item
           label="按省份选择:"
           style="margin-right: 50px">
-          <el-select placeholder="省份">
-            <el-option
-              label="区域一"
-              value="shanghai"/>
-            <el-option
-              label="区域二"
-              value="beijing"/>
+          <el-select
+            :focus="handleSelectFocus"
+            placeholder="省份">
+            <div>asasa</div>
           </el-select>
           <el-select placeholder="城市:">
             <el-option
@@ -115,6 +112,11 @@ export default {
   computed: {
     cityLabelList() {
       return this.cityList.map(item => item.label)
+    }
+  },
+  methods: {
+    handleSelectFocus() {
+      console.log('--')
     }
   }
 }
