@@ -219,10 +219,11 @@ export default {
             color: $primary-color
 </style>
 <style lang="sass">
-.el-form-item__label
-  font-size: 16px
-  color: #333
-  font-weight: 500
-.el-form-item
-  margin-bottom: 30px
+  .change-city
+    .el-form-item__label
+      font-size: 16px
+      color: #333
+      font-weight: 500
+    .el-form-item
+      margin-bottom: 30px
 </style>
