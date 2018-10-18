@@ -1,43 +1,10 @@
 <template>
   <div class="header-wrap">
-    <div class="header-bar">
-      <div class="header-content">
-        <div class="header-bar-position">
-          <i class="iconfont icon-address"/>
-          <span class="current-city">{{ localCity }}</span>
-          <nuxt-link
-            to="/changecity"
-            class="change-city">切换城市</nuxt-link>
-          <div
-            v-if="!userInfo"
-            class="user-entry">
-            <nuxt-link
-              to="/login"
-              class="user-login">立即登录</nuxt-link>
-            <a
-              href="#"
-              class="user-register">注册</a>
-          </div>
-          <div
-            v-else
-            class="user-entry">
-            <nuxt-link
-              to="/"
-              class="user-login">{{ userInfo.username }}</nuxt-link>
-            <a
-              href="#"
-              class="user-register"
-              @click.stop.prevent="handleLogout">退出</a>
-          </div>
-        </div>
-        <div class="header-bar-nav">
-          <div class="nav-item">我的美团</div>
-          <div class="nav-item">手机APP</div>
-          <div class="nav-item">商家中心</div>
-          <div class="nav-item">网站导航</div>
-        </div>
-      </div>
-    </div>
+    <header-bar
+      :user-info="userInfo"
+      :local-city="localCity"
+      @handleLogout="handleLogout"
+    />
     <div class="header-search">
       <div class="header-logo">
         <img src="../../static/images/logo.png">
@@ -81,8 +48,12 @@
 
 <script>
 import { mapActions } from 'vuex'
+import HeaderBar from './HeaderBar'
 export default {
   name: 'Header',
+  components: {
+    HeaderBar
+  },
   props: {
     userInfo: {
       type: Object,
@@ -111,42 +82,6 @@ export default {
 .header-wrap
   background-color: #fff
   box-shadow: 0 2px 27px 0 rgba(0,0,0,.1)
-  .header-bar
-    background-color: #f7f7f7
-    color: #999
-    height: 40px
-    width: 100%
-    .header-content
-      width: 960px
-      height: 100%
-      margin: 0 auto
-      @include flex-sb
-      .header-bar-position, .header-bar-nav
-        height: 100%
-        display: flex
-        align-items: center
-      .header-bar-position
-        .icon-address
-          font-size: 12px
-          margin-top: 2px
-        .current-city
-          color: #666
-        .change-city:hover
-          color: $primary-color
-        .change-city
-          background: #F4F4F4
-          border: 1px solid #E5E5E5
-          border-radius: 2px
-          color: #666
-          margin: 0 4px
-          padding: 0 2px
-        .user-entry
-          margin-left: 15px
-          .user-login
-            color: $primary-color
-      .header-bar-nav
-        .nav-item
-          padding: 12px 14px
   .header-search
     width: 960px
     margin: 0 auto
