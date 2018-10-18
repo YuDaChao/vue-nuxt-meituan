@@ -5,34 +5,7 @@
       :local-city="localCity"
       @handleLogout="handleLogout"
     />
-    <div class="header-search">
-      <div class="header-logo">
-        <img src="../../static/images/logo.png">
-      </div>
-      <div class="header-search-module">
-        <el-input
-          placeholder="搜索商家或地点"
-          class="input-with-select">
-          <el-button
-            slot="append"
-            icon="el-icon-search"/>
-        </el-input>
-        <div class="header-hot-words">
-          <a
-            href="#"
-            class="hot-word">好士牛排</a>
-          <a
-            href="#"
-            class="hot-word">7天连锁酒店</a>
-          <a
-            href="#"
-            class="hot-word">胡桃里音乐酒馆</a>
-          <a
-            href="#"
-            class="hot-word">易佰良品酒店</a>
-        </div>
-      </div>
-    </div>
+    <header-search/>
     <div class="header-nav-list">
       <div class="category-nav-content">
         <div class="category-nav-item">美团外卖</div>
@@ -49,10 +22,13 @@
 <script>
 import { mapActions } from 'vuex'
 import HeaderBar from './HeaderBar'
+import HeaderSearch from './HeaderSearch'
+
 export default {
   name: 'Header',
   components: {
-    HeaderBar
+    HeaderBar,
+    HeaderSearch
   },
   props: {
     userInfo: {
@@ -77,35 +53,11 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style scoped lang="sass">
 @import "../../assets/sass/variables.scss"
 .header-wrap
   background-color: #fff
   box-shadow: 0 2px 27px 0 rgba(0,0,0,.1)
-  .header-search
-    width: 960px
-    margin: 0 auto
-    display: flex
-    .header-logo
-      padding: 28px 160px 40px 0
-      img
-        width: 126px
-        height: 46px
-    .header-search-module
-      width: 550px
-      padding-top: 30px
-      .header-hot-words
-        padding: 8px 0 0 12px
-        .hot-word
-          color: #999999
-          margin: 3px 10px 0 0
-          &:hover
-            color: $primary-color
-  .el-input-group__append
-    background-color: $primary-color
-    border-color: $primary-color
-    color: #fff
-    padding: 0 30px
   .header-nav-list
     width: 960px
     margin: 0 auto
