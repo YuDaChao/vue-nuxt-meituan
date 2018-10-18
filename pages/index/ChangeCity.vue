@@ -98,8 +98,21 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'change-city',
+          name: 'change-city',
+          content: '这是美团网-切换城市'
+        }
+      ]
+    }
+  },
   data() {
     return {
+      title: '美团网-切换城市',
       cityList: []
     }
   },

@@ -7,7 +7,7 @@
           :current-show-category="currentShowCategory"
           :show-category-wrap="showCategoryWrap"
           @enter="enter"
-          @enter-wrap="enterWrap"
+          @enterWrap="enterWrap"
           @leave="leave"
         />
         <div class="right-banner">
@@ -231,8 +231,21 @@ export default {
     UserCard,
     NavMenu
   },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'index',
+          name: 'index',
+          content: '这是美团网-首页'
+        }
+      ]
+    }
+  },
   data() {
     return {
+      title: '美团网-首页',
       banners: [
         '/images/banner/1.jpg',
         '/images/banner/2.jpg',
