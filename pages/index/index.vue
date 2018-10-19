@@ -10,6 +10,16 @@
           @enterWrap="enterWrap"
           @leave="leave"
         />
+        <div class="header-nav-list">
+          <div class="category-nav-content">
+            <div class="category-nav-item">美团外卖</div>
+            <div class="category-nav-item">猫眼电影</div>
+            <div class="category-nav-item">美团酒店</div>
+            <div class="category-nav-item">民宿 / 公寓</div>
+            <div class="category-nav-item">商家入住</div>
+            <div class="category-nav-item">美团公益</div>
+          </div>
+        </div>
         <div class="right-banner">
           <div class="banner-row">
             <div class="banner-slider">
@@ -186,6 +196,7 @@ export default {
   margin: 0 auto
   position: relative
   .banner-content
+    position: relative
     display: flex
     .right-banner
       margin: 10px 0 0 10px
@@ -239,4 +250,33 @@ export default {
             .red
               color: #EC5330
               margin-right: 5px
+    .header-nav-list
+      position: absolute
+      top: -42px
+      width: 960px
+      margin: 0 auto
+      padding-bottom: 10px
+      .category-nav-content
+        display: flex
+        align-items: center
+        height: 32px
+        margin-left: 266px
+        .category-nav-item
+          color: #222
+          font-weight: 700
+          font-size: 16px
+          margin: 0 20px
+          cursor: pointer
+          &:nth-child(1):hover
+            color: #FBC703
+          &:nth-child(2):hover
+            color: #ed1e24
+          &:nth-child(3):hover
+            color: $primary-color
+          &:nth-child(4):hover
+            color: #FBC703
+          &:nth-child(5):hover
+            color: #ed1e24
+          &:nth-child(6):hover
+            color: $primary-color
 </style>
