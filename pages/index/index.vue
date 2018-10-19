@@ -50,186 +50,25 @@
         </div>
       </div>
     </div>
-    <div class="scenes-container">
-      <div class="quality-container">
-        <div class="index-nav-container">
-          <ul>
-            <li class="title nav-item mf-shang-hei-regular">有格调</li>
-            <li class="nav-item active">全部</li>
-          </ul>
-        </div>
-        <div class="quality-area">
-          <a class="link quality-card">
-            <div class="quality-img">
-              <img
-                src="/images/quality/1.jpg"
-                class="image">
-            </div>
-            <div class="poi-info">
-              <div class="title">廊坊固安福朋喜来登酒店</div>
-              <div class="tags-wrapper">
-                <div class="tag">酒店套餐</div>
-                <div class="tag">亲子场景酒店</div>
-                <div class="tag">发票推荐</div>
-                <div class="tag">亲子酒店点评</div>
-                <div class="tag">含早</div>
-              </div>
-              <div class="price-info">
-                <span class="current-price-wrapper">
-                  <span class="price-symbol">¥</span>
-                  <span class="current-price">
-                    <span class="price">842</span>
-                    <span class="current-price-type">/起</span>
-                  </span>
-                </span>
-              </div>
-            </div>
-          </a>
-          <a class="link quality-card">
-            <div class="quality-img">
-              <img
-                src="/images/quality/1.jpg"
-                class="image">
-            </div>
-            <div class="poi-info">
-              <div class="title">廊坊固安福朋喜来登酒店</div>
-              <div class="tags-wrapper">
-                <div class="tag">酒店套餐</div>
-                <div class="tag">亲子场景酒店</div>
-                <div class="tag">发票推荐</div>
-                <div class="tag">亲子酒店点评</div>
-                <div class="tag">含早</div>
-              </div>
-              <div class="price-info">
-                <span class="current-price-wrapper">
-                  <span class="price-symbol">¥</span>
-                  <span class="current-price">
-                    <span class="price">842</span>
-                    <span class="current-price-type">/起</span>
-                  </span>
-                </span>
-              </div>
-            </div>
-          </a>
-          <a class="link quality-card">
-            <div class="quality-img">
-              <img
-                src="/images/quality/1.jpg"
-                class="image">
-            </div>
-            <div class="poi-info">
-              <div class="title">廊坊固安福朋喜来登酒店</div>
-              <div class="tags-wrapper">
-                <div class="tag">酒店套餐</div>
-                <div class="tag">亲子场景酒店</div>
-                <div class="tag">发票推荐</div>
-                <div class="tag">亲子酒店点评</div>
-                <div class="tag">含早</div>
-              </div>
-              <div class="price-info">
-                <span class="current-price-wrapper">
-                  <span class="price-symbol">¥</span>
-                  <span class="current-price">
-                    <span class="price">842</span>
-                    <span class="current-price-type">/起</span>
-                  </span>
-                </span>
-              </div>
-            </div>
-          </a>
-          <a class="link quality-card">
-            <div class="quality-img">
-              <img
-                src="/images/quality/1.jpg"
-                class="image">
-            </div>
-            <div class="poi-info">
-              <div class="title">廊坊固安福朋喜来登酒店</div>
-              <div class="tags-wrapper">
-                <div class="tag">酒店套餐</div>
-                <div class="tag">亲子场景酒店</div>
-                <div class="tag">发票推荐</div>
-                <div class="tag">亲子酒店点评</div>
-                <div class="tag">含早</div>
-              </div>
-              <div class="price-info">
-                <span class="current-price-wrapper">
-                  <span class="price-symbol">¥</span>
-                  <span class="current-price">
-                    <span class="price">842</span>
-                    <span class="current-price-type">/起</span>
-                  </span>
-                </span>
-              </div>
-            </div>
-          </a>
-          <a class="link quality-card">
-            <div class="quality-img">
-              <img
-                src="/images/quality/1.jpg"
-                class="image">
-            </div>
-            <div class="poi-info">
-              <div class="title">廊坊固安福朋喜来登酒店</div>
-              <div class="tags-wrapper">
-                <div class="tag">酒店套餐</div>
-                <div class="tag">亲子场景酒店</div>
-                <div class="tag">发票推荐</div>
-                <div class="tag">亲子酒店点评</div>
-                <div class="tag">含早</div>
-              </div>
-              <div class="price-info">
-                <span class="current-price-wrapper">
-                  <span class="price-symbol">¥</span>
-                  <span class="current-price">
-                    <span class="price">842</span>
-                    <span class="current-price-type">/起</span>
-                  </span>
-                </span>
-              </div>
-            </div>
-          </a>
-          <a class="link quality-card">
-            <div class="quality-img">
-              <img
-                src="/images/quality/1.jpg"
-                class="image">
-            </div>
-            <div class="poi-info">
-              <div class="title">廊坊固安福朋喜来登酒店</div>
-              <div class="tags-wrapper">
-                <div class="tag">酒店套餐</div>
-                <div class="tag">亲子场景酒店</div>
-                <div class="tag">发票推荐</div>
-                <div class="tag">亲子酒店点评</div>
-                <div class="tag">含早</div>
-              </div>
-              <div class="price-info">
-                <span class="current-price-wrapper">
-                  <span class="price-symbol">¥</span>
-                  <span class="current-price">
-                    <span class="price">842</span>
-                    <span class="current-price-type">/起</span>
-                  </span>
-                </span>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
+    <scenes
+      :tabs="tabs"
+      :scenes="currentScenes"
+      @enter="scenesTabEnter"
+    />
   </section>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import UserCard from '../../components/user-card/UserCard'
 import NavMenu from '../../components/nav-menu/NavMenu'
+import Scenes from '../../components/scenes/Scenes'
 
 export default {
   components: {
     UserCard,
-    NavMenu
+    NavMenu,
+    Scenes
   },
   head() {
     return {
@@ -293,13 +132,21 @@ export default {
   },
   computed: {
     ...mapState({
-      userInfo: state => state.user.userInfo
-    })
+      userInfo: state => state.user.userInfo,
+      scenes: state => state.scenes,
+      tabs: state => state.tabs,
+      currentTab: state => state.currentTab
+    }),
+    currentScenes() {
+      return this.scenes[this.currentTab] || []
+    }
   },
   async mounted() {
     this.getSecondCategoryList()
+    this.getScenes('all')
   },
   methods: {
+    ...mapActions(['getScenes']),
     async getSecondCategoryList() {
       const result = await this.$axios.get('/s_category')
       if (result.status === 0) {
@@ -324,6 +171,9 @@ export default {
     },
     leave() {
       this.showCategoryWrap = false
+    },
+    scenesTabEnter(tab) {
+      this.getScenes(tab)
     }
   }
 }
@@ -389,114 +239,4 @@ export default {
             .red
               color: #EC5330
               margin-right: 5px
-.scenes-container
-  width: 960px
-  margin: 40px auto
-  .index-nav-container
-    width: 100%
-    height: 44px
-    line-height: 44px
-    color: #fff
-    font-size: 14px
-    border-top-left-radius: 5px
-    border-top-right-radius: 5px
-    background-color: rgb(190, 164, 116);
-    background-image: linear-gradient(to right, rgb(194, 176, 142) 3%, rgb(190, 164, 116) 100%);
-    ul
-      display: flex
-      align-items: center
-      .title
-        font-size: 18px
-        margin: 0 10px 0 13px
-      .nav-item
-        padding: 0 5px
-        cursor: pointer
-        position: relative
-        &.active::after
-          position: absolute
-          border-left: 5px solid transparent
-          border-right: 5px solid transparent
-          border-bottom: 7px solid #fff
-          content: " "
-          display: block
-          width: 2px
-          height: 0
-          top: 37px
-          left: 0
-          right: 0
-          margin: auto
-  .quality-area
-    background: #fff
-    padding: 11px 10px 10px
-    border: 1px solid #e5e5e5
-    border-top: 0
-    border-bottom-left-radius: 4px
-    border-bottom-right-radius: 4px
-    .quality-card
-      display: inline-block
-      width: 32.99%
-      height: 280px
-      padding: 10px
-      background-color: #fff
-      transition: background-color .5s
-      cursor: pointer
-      &:hover
-        background-color: #f4f4f4
-        border-radius: 4px
-        transition: background-color .5s
-      .quality-img
-        height: 162px
-        margin-bottom: 12px
-        cursor: pointer
-        .image
-          width: 100%
-          height: 100%
-          border-radius: 4px
-      .poi-info
-        .title
-          font-size: 16px
-          color: #222
-          height: 22px
-          line-height: 22px
-          font-weight: 500
-          margin-bottom: 8px
-          cursor: pointer
-          overflow: hidden
-          text-overflow: ellipsis
-          white-space: nowrap
-        .tags-wrapper
-          font-size: 12px
-          color: #999
-          height: 20px
-          overflow: hidden
-          margin-bottom: 5px
-          .tag
-            float: left
-            height: 18px
-            line-height: 16px
-            text-align: center
-            border: 1px solid #d8d8d8
-            border-radius: 2px
-            margin-right: 10px
-            margin-bottom: 5px
-            padding:  0 3px
-        .price-info
-          height: 27px
-          overflow: hidden
-          margin-bottom: 10px
-          .price-symbol
-            font-size: 14px
-            color: #BE9E4D
-            font-weight: 500
-          .current-price
-            font-size: 0
-            margin-right: 6px
-            letter-spacing: -.8px
-            .price
-              font-size: 22px
-              color: #BE9E4D
-            .current-price-type
-              font-size: 12px
-              color: #BE9E4D
-              letter-spacing: -.6px
 </style>

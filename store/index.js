@@ -1,10 +1,25 @@
 export const state = () => ({
-  localCity: ''
+  localCity: '',
+  scenes: {},
+  tabs: [],
+  currentTab: ''
 })
 
 export const mutations = {
   setLocalCity(state, city) {
     state.localCity = city
+  },
+  setScenes(state, { tab, data, tabs }) {
+    state.tabs = tabs
+    if (!state.scenes[tab]) {
+      state.scenes = {
+        ...state.scenes,
+        [tab]: data
+      }
+    }
+  },
+  setCurrentTab(state, tab) {
+    state.currentTab = tab
   }
 }
 
@@ -15,6 +30,18 @@ export const actions = {
       commit('user/setUserInfo', result.data)
     } else {
       commit('user/setUserInfo', null)
+    }
+  },
+  async getScenes({ commit, state }, tab) {
+    commit('setCurrentTab', tab)
+    if (state.scenes[tab]) return
+    const result = await this.$axios.get(`/styles?tab=${tab}`)
+    if (result.status === 0) {
+      commit('setScenes', {
+        tab,
+        data: result.data.styles,
+        tabs: result.data.tabs
+      })
     }
   }
 }
