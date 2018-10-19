@@ -48,6 +48,4 @@ export default {
 .header-wrap
   background-color: #fff
   box-shadow: 0 2px 27px 0 rgba(0,0,0,.1)
-  .header-search
-    padding-bottom: 42px
 </style>
