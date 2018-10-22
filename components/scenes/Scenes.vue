@@ -24,13 +24,17 @@
           </div>
           <div class="poi-info">
             <div class="title">{{ item.title }}</div>
-            <div class="tags-wrapper">
-              <div class="tag">酒店套餐</div>
-              <div class="tag">亲子场景酒店</div>
-              <div class="tag">发票推荐</div>
-              <div class="tag">亲子酒店点评</div>
-              <div class="tag">含早</div>
+            <div
+              v-if="item.tags"
+              class="tags-wrapper">
+              <div
+                v-for="tag in item.tags"
+                :key="tag"
+                class="tag">{{ tag }}</div>
             </div>
+            <div
+              v-if="item.sub_title"
+              class="sub_title">{{ item.sub_title }}</div>
             <div class="price-info">
               <span class="current-price-wrapper">
                 <span class="price-symbol">¥</span>
@@ -171,6 +175,15 @@ export default {
               margin-right: 10px
               margin-bottom: 5px
               padding:  0 3px
+          .sub_title
+            font-size: 12px
+            color: #999999
+            line-height: 18px
+            height: 18px
+            margin-bottom: 7px
+            overflow: hidden
+            text-overflow: ellipsis
+            white-space: nowrap
           .price-info
             height: 27px
             overflow: hidden

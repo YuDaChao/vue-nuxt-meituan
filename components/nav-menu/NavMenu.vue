@@ -97,7 +97,7 @@ export default {
       ul
         margin-top: 10px
         li
-          height: 26px
+          height: 25px
           padding: 2px 12px
           display: flex
           align-items: center
