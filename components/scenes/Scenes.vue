@@ -39,8 +39,10 @@
               <span class="current-price-wrapper">
                 <span class="price-symbol">¥</span>
                 <span class="current-price">
-                  <span class="price">{{ item.current_price }}</span>
-                  <span class="current-price-type">/起</span>
+                  <span class="price">{{ item.current_price || '--' }}</span>
+                  <span
+                    v-if="item.current_price !== '抢光了'"
+                    class="current-price-type">/起</span>
                 </span>
               </span>
             </div>

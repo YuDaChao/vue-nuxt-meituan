@@ -9,6 +9,9 @@
           :key="category.id"
           class="nav-li"
           @mouseenter="enter(category.id)">
+          <i
+            :class="category.icon"
+            class="iconfont" />
           <span>{{ category.name }}</span>
           <i class="iconfont icon-jiantouyou" />
         </li>
