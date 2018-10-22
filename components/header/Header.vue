@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState, mapMutations } from 'vuex'
 import HeaderBar from './HeaderBar'
 import HeaderSearch from './HeaderSearch'
 
@@ -20,24 +20,30 @@ export default {
     HeaderBar,
     HeaderSearch
   },
-  props: {
-    userInfo: {
-      type: Object,
-      default() {
-        return null
-      }
-    },
-    localCity: {
-      type: String,
-      default: ''
-    }
+  computed: {
+    ...mapState({
+      userInfo: state => state.user.userInfo,
+      localCity: state => state.localCity
+    })
+  },
+  mounted() {
+    this.getLocalCity()
   },
   methods: {
+    ...mapMutations(['setLocalCity']),
     ...mapActions({
       logout: 'user/logout'
     }),
     handleLogout() {
       this.logout()
+    },
+    getLocalCity() {
+      const _this = this
+      let localCity = new BMap.LocalCity()
+      localCity.get(function(result) {
+        const localCity = result.name
+        _this.setLocalCity(localCity)
+      })
     }
   }
 }

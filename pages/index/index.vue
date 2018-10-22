@@ -153,7 +153,10 @@ export default {
   },
   async mounted() {
     this.getSecondCategoryList()
-    this.getScenes('all')
+    this.getScenes({
+      tab: 'all',
+      type: 'quality'
+    })
   },
   methods: {
     ...mapActions(['getScenes']),
@@ -183,7 +186,10 @@ export default {
       this.showCategoryWrap = false
     },
     scenesTabEnter(tab) {
-      this.getScenes(tab)
+      this.getScenes({
+        tab,
+        type: 'quality'
+      })
     }
   }
 }

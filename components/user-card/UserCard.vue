@@ -27,9 +27,11 @@
         <i class="el-icon-setting"/>
       </div>
       <div class="header-img">
-        <img
-          src="~static/images/banner/head-img.png"
-          class="avatar-img">
+        <nuxt-link to="/account/userinfo">
+          <img
+            src="~static/images/banner/head-img.png"
+            class="avatar-img">
+        </nuxt-link>
       </div>
       <div class="user-name">{{ userInfo.username }}</div>
       <div class="user-row first">

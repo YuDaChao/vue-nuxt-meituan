@@ -1,7 +1,11 @@
 <template>
   <div class="header-search">
     <div class="header-logo">
-      <img src="~/static/images/logo.png">
+      <nuxt-link to="/">
+        <img
+          class="home-img"
+          src="~/static/images/logo.png">
+      </nuxt-link>
     </div>
     <div class="header-search-module">
       <el-input
@@ -43,9 +47,10 @@ export default {
     display: flex
     .header-logo
       padding: 28px 160px 40px 0
-      img
+      .home-img
         width: 126px
         height: 46px
+        cursor: pointer
     .header-search-module
       width: 550px
       padding-top: 30px

@@ -32,10 +32,10 @@ export const actions = {
       commit('user/setUserInfo', null)
     }
   },
-  async getScenes({ commit, state }, tab) {
+  async getScenes({ commit, state }, { tab, type }) {
     commit('setCurrentTab', tab)
     if (state.scenes[tab]) return
-    const result = await this.$axios.get(`/styles?tab=${tab}`)
+    const result = await this.$axios.get(`/styles?tab=${tab}&type=${type}`)
     if (result.status === 0) {
       commit('setScenes', {
         tab,
