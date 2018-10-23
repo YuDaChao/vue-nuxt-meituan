@@ -207,4 +207,5 @@ export default {
             .sale-num
               float: right
               margin-top: 10px
+              color: #999
 </style>

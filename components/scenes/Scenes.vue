@@ -45,6 +45,7 @@
                     class="current-price-type">/起</span>
                 </span>
               </span>
+              <span class="bottom-info">{{ item.bottom_info }}</span>
             </div>
           </div>
         </a>
@@ -205,4 +206,9 @@ export default {
                 font-size: 12px
                 color: #BE9E4D
                 letter-spacing: -.6px
+            .bottom-info
+              font-size: 12px
+              color: #999
+              float: right
+              margin-top: 10px    
 </style>
