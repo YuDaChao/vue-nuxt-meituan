@@ -85,6 +85,7 @@
 <script>
 import MtHeader from '../../components/header/Header'
 export default {
+  middleware: 'authenticated',
   components: {
     MtHeader
   },

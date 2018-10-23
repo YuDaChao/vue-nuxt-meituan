@@ -23,6 +23,12 @@ export const mutations = {
   }
 }
 
+export const getters = {
+  isAuthenticated(state) {
+    return state.user.userInfo !== null
+  }
+}
+
 export const actions = {
   async nuxtServerInit({ commit }) {
     const result = await this.$axios.post('/users/info')

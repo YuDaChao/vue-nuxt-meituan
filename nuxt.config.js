@@ -47,7 +47,9 @@ module.exports = {
     { src: '@/plugins/swiper.js', ssr: false },
     { src: '@/plugins/axios' }
   ],
-
+  // router: {
+  //   middleware: 'authenticated'
+  // },
   /*
   ** Nuxt.js modules
   */
