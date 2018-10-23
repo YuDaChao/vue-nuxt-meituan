@@ -65,6 +65,7 @@
       :scenes="currentScenes"
       @enter="scenesTabEnter"
     />
+    <cheap/>
   </section>
 </template>
 
@@ -73,12 +74,14 @@ import { mapState, mapActions } from 'vuex'
 import UserCard from '../../components/user-card/UserCard'
 import NavMenu from '../../components/nav-menu/NavMenu'
 import Scenes from '../../components/scenes/Scenes'
+import Cheap from '../../components/cheap/Cheap'
 
 export default {
   components: {
     UserCard,
     NavMenu,
-    Scenes
+    Scenes,
+    Cheap
   },
   head() {
     return {
