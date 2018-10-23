@@ -65,7 +65,11 @@
       :scenes="currentScenes"
       @enter="scenesTabEnter"
     />
-    <cheap/>
+    <cheap
+      :tabs="cheapTabs"
+      :cheaps="currentCheaps"
+      @enter="cheapTabEnter"
+    />
   </section>
 </template>
 
@@ -147,11 +151,17 @@ export default {
     ...mapState({
       userInfo: state => state.user.userInfo,
       scenes: state => state.scenes,
+      cheaps: state => state.cheaps,
       tabs: state => state.tabs,
-      currentTab: state => state.currentTab
+      cheapTabs: state => state.cheapTabs,
+      currentTab: state => state.currentTab,
+      currentCheapTab: state => state.currentCheapTab
     }),
     currentScenes() {
       return this.scenes[this.currentTab] || []
+    },
+    currentCheaps() {
+      return this.cheaps[this.currentCheapTab] || []
     }
   },
   async mounted() {
@@ -160,9 +170,13 @@ export default {
       tab: 'all',
       type: 'quality'
     })
+    this.getCheaps({
+      tab: 'all',
+      type: 'cheap'
+    })
   },
   methods: {
-    ...mapActions(['getScenes']),
+    ...mapActions(['getScenes', 'getCheaps']),
     async getSecondCategoryList() {
       const result = await this.$axios.get('/s_category')
       if (result.status === 0) {
@@ -192,6 +206,12 @@ export default {
       this.getScenes({
         tab,
         type: 'quality'
+      })
+    },
+    cheapTabEnter(tab) {
+      this.getCheaps({
+        tab,
+        type: 'cheap'
       })
     }
   }

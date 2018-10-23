@@ -3,138 +3,46 @@
     <div class="index-nav-conatiner">
       <ul>
         <li class="nav-item title">狠优惠</li>
-        <li class="nav-item active">全部</li>
-        <li class="nav-item">美食</li>
-        <li class="nav-item">休闲</li>
+        <li
+          v-for="(tab, index) in tabs"
+          :key="tab.id"
+          :class="{active: index === currentActiveIndex}"
+          class="nav-item"
+          @mouseenter="enter(tab.tab, index)">{{ tab.text }}</li>
       </ul>
     </div>
     <div class="cheap-area">
-      <a class="link cheap-card">
+      <a
+        v-for="item in cheaps"
+        :key="item.id"
+        class="link cheap-card">
         <div class="cheap-img">
           <img
-            src="http://p1.meituan.net/deal/201208/22/1_0822151022.jpg@213w_120h_1e_1c"
+            :src="item.img_url"
             class="image">
         </div>
         <div class="poi-info">
-          <div class="title">星空影城(六里桥店)</div>
+          <div class="title">{{ item.title }}</div>
           <div
-            class="sub_title">星空影城</div>
+            class="sub_title">{{ item.sub_title }}</div>
           <div
             class="tags-wrapper">
             <div
-              class="tag">退</div>
+              v-for="tag in item.tags"
+              :key="tag"
+              class="tag">{{ tag }}</div>
           </div>  
           <div class="price-info">
             <span class="current-price-wrapper">
               <span class="price-symbol">¥</span>
               <span class="current-price">
-                <span class="price">22.9</span>
-              </span>
-            </span>
-          </div>
-        </div>
-      </a>
-      <a class="link cheap-card">
-        <div class="cheap-img">
-          <img
-            src="http://p1.meituan.net/deal/201208/22/1_0822151022.jpg@213w_120h_1e_1c"
-            class="image">
-        </div>
-        <div class="poi-info">
-          <div class="title">星空影城(六里桥店)</div>
-          <div
-            class="sub_title">星空影城</div>
-          <div
-            class="tags-wrapper">
-            <div
-              class="tag">退</div>
-          </div>  
-          <div class="price-info">
-            <span class="current-price-wrapper">
-              <span class="price-symbol">¥</span>
-              <span class="current-price">
-                <span class="price">22.9</span>
-              </span>
-            </span>
-          </div>
-        </div>
-      </a>
-      <a class="link cheap-card">
-        <div class="cheap-img">
-          <img
-            src="http://p1.meituan.net/deal/201208/22/1_0822151022.jpg@213w_120h_1e_1c"
-            class="image">
-        </div>
-        <div class="poi-info">
-          <div class="title">星空影城(六里桥店)</div>
-          <div
-            class="sub_title">星空影城</div>
-          <div
-            class="tags-wrapper">
-            <div
-              class="tag">退</div>
-          </div>  
-          <div class="price-info">
-            <span class="current-price-wrapper">
-              <span class="price-symbol">¥</span>
-              <span class="current-price">
-                <span class="price">22.9</span>
-              </span>
-            </span>
-          </div>
-        </div>
-      </a>
-      <a class="link cheap-card">
-        <div class="cheap-img">
-          <img
-            src="http://p1.meituan.net/deal/201208/22/1_0822151022.jpg@213w_120h_1e_1c"
-            class="image">
-        </div>
-        <div class="poi-info">
-          <div class="title">星空影城(六里桥店)</div>
-          <div
-            class="sub_title">星空影城</div>
-          <div
-            class="tags-wrapper">
-            <div
-              class="tag">退</div>
-          </div>  
-          <div class="price-info">
-            <span class="current-price-wrapper">
-              <span class="price-symbol">¥</span>
-              <span class="current-price">
-                <span class="price">22.9</span>
-              </span>
-            </span>
-          </div>
-        </div>
-      </a>
-      <a class="link cheap-card">
-        <div class="cheap-img">
-          <img
-            src="http://p1.meituan.net/deal/201208/22/1_0822151022.jpg@213w_120h_1e_1c"
-            class="image">
-        </div>
-        <div class="poi-info">
-          <div class="title">星空影城(六里桥店)</div>
-          <div
-            class="sub_title">星空影城</div>
-          <div
-            class="tags-wrapper">
-            <div
-              class="tag">退</div>
-          </div>  
-          <div class="price-info">
-            <span class="current-price-wrapper">
-              <span class="price-symbol">¥</span>
-              <span class="current-price">
-                <span class="price">22.9</span>
+                <span class="price">{{ item.current_price }}</span>
               </span>
               <span class="old-price">
-                <span class="price">门市价32.9</span>
+                <span class="price">{{ item.old_price }}</span>
               </span>
             </span>
-            <span class="sale-num">已售1.1万</span>
+            <span class="sale-num">{{ item.bottom_info }}</span>
           </div>
         </div>
       </a>
@@ -142,7 +50,35 @@
   </div>
 </template>
 <script>
-export default {}
+export default {
+  name: 'Scenes',
+  props: {
+    tabs: {
+      type: Array,
+      default() {
+        return []
+      }
+    },
+    cheaps: {
+      type: Array,
+      default() {
+        return []
+      }
+    }
+  },
+  data() {
+    return {
+      currentActiveIndex: 0
+    }
+  },
+  methods: {
+    enter(tab, index) {
+      if (this.currentActiveIndex === index) return
+      this.currentActiveIndex = index
+      this.$emit('enter', tab)
+    }
+  }
+}
 </script>
 <style lang="sass" scoped>
 .cheap-wrapper
